@@ -1,13 +1,13 @@
-# Webpack Boilerplate
-
-Boilerplate for static websites using Webpack and Babel.
-
-## 1. Characteristics
-
 [TODO]
 All browser rendering (CSS and JS), including polyfills automatically (Up to 3 last versions)
 CSS, JS and HTML Linter for atom editor
 minimize and uglify JS in production
+
+# Web Project Boilerplate
+
+Boilerplate for static websites using Webpack and Babel.
+
+## 1. Characteristics
 
 #### 1.1 Config files
 Webpack config files are divided into common, dev and prod mode and merged using webpack-merge. So that is easy to add new loaders, plugins etc for a specific mode or for both
@@ -22,10 +22,8 @@ In development mode, webpack-dev-server is used to reload every time a file chan
 In production mode the CSS files are extracted using mini-css-extract-plugin to avoid initial unstyled pages when loading on slow networks
 
 #### 1.4. Minify and Uglify JS and style bundles
-Uses optimize-css-assets-webpack-plugin to minimize CSS and terser-webpack-plugin to minimize and uglify JS in production mode.
+Uses optimize-css-assets-webpack-plugin to minimize CSS and terser-webpack-plugin to minimize and uglify JS in production mode
 
-#### 1.5. Uses SASS
-Style files can be set using SASS syntax. It uses node-sass compiler and sass-loader
 
 
 ## 2. Directories structure
@@ -43,3 +41,9 @@ To include documentation related to the project, requirements, manuals, changelo
 
 #### 2.4. src
 To include the project source code
+
+## 3. Sources
+
+* [Learn Webpack course (youtube)](https://www.youtube.com/playlist?list=PLblA84xge2_zwxh3XJqy6UVxS60YdusY8)
+
+* [Webpack Docs](https://webpack.js.org/concepts)
