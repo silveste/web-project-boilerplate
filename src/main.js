@@ -1,2 +1,2 @@
 import "./style.scss";
-alert("Helloooooo!!!");
+console.log(`Environment is ${process.env.NODE_ENV}`);

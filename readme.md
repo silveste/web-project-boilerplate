@@ -1,8 +1,3 @@
-[TODO]
-All browser rendering (CSS and JS), including polyfills automatically (Up to 3 last versions)
-CSS, JS and HTML Linter for atom editor
-minimize and uglify JS in production
-
 # Web Project Boilerplate
 
 Boilerplate for static websites using Webpack and Babel.
@@ -24,7 +19,11 @@ In production mode the CSS files are extracted using mini-css-extract-plugin to 
 #### 1.4. Minify and Uglify JS and style bundles
 Uses optimize-css-assets-webpack-plugin to minimize CSS and terser-webpack-plugin to minimize and uglify JS in production mode
 
+#### 1.5 Support for ECMAScript 9 (2018)
+Uses babel transpiler to support ECMAScript 9 syntax in 99.75% of market browsers (Using browserslist)
 
+#### 1.6. Automatically add JS polyfills for old browsers
+Uses babel transpiler to add polyfills automatically for old browsers when there is not supported code
 
 ## 2. Directories structure
 #### 2.1. config

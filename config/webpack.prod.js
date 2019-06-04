@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -10,7 +11,7 @@ module.exports = merge(common, {
   mode: 'production',
   plugins: [
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({filename: 'style-[contentHash]-bundle.css'}),
+    new MiniCssExtractPlugin({filename: 'style-[contentHash:8]-bundle.css'})
   ],
   optimization: {
     minimizer: [
@@ -31,7 +32,8 @@ module.exports = merge(common, {
     ]
   },
   output: {
-    filename: 'main-[contentHash]-bundle.js',
-    path: path.resolve(__dirname,'../dist')
+    filename: 'main-[contentHash:8]-bundle.js',
+    path: path.resolve(__dirname,'../dist'),
+    publicPath: './'
   }
 });

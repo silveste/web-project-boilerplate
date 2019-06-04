@@ -16,5 +16,9 @@ module.exports = merge(common,{
       },
     ]
   },
+  devServer: {
+    overlay: true //Show compile errors in the browser
+  },
+  devtool: 'source-map' //Devtools will show the source in addition the compiled code
   //dev mode is used with webpack-dev-server therefore no need to set the output
 });

@@ -7,6 +7,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        use: ['babel-loader'],
+        exclude: /node_modules/
+      },
+      {
         test: /\.html$/,
         use: ['html-loader']
       },
@@ -15,8 +20,8 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            name: '[name]-[hash].[ext]',
-            outputPath: 'public/imgs'
+            name: '[name]-[hash:8].[ext]',
+            outputPath: 'imgs'
           }
         }
       }
