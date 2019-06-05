@@ -8,8 +8,26 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: ['babel-loader'],
-        exclude: /node_modules/
+        use: {
+          loader: 'babel-loader',
+          options: {
+            configFile: './config/babel.config.js'
+          }
+        },
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.(scss|sass)$/,
+        use: [
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {path: __dirname + '/postcss.config.js'}
+            }
+          },
+          'sass-loader'
+        ]
       },
       {
         test: /\.html$/,

@@ -7,7 +7,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const path = require('path');
 const common = require('./webpack.common');
 
-module.exports = merge(common, {
+const prod = {
   mode: 'production',
   plugins: [
     new CleanWebpackPlugin(),
@@ -22,11 +22,9 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.(scss|sass)$/,
         use: [
           MiniCssExtractPlugin.loader,
-         'css-loader',
-         'sass-loader'
         ]
       },
     ]
@@ -36,4 +34,6 @@ module.exports = merge(common, {
     path: path.resolve(__dirname,'../dist'),
     publicPath: './'
   }
-});
+};
+
+module.exports = merge.smartStrategy({'module.rules.use': 'prepend'})(common,prod);
