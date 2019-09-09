@@ -18,6 +18,7 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "babel-loader": "^8.0.6",
+    "brotli-webpack-plugin": "^1.1.0",
     "clean-webpack-plugin": "^2.0.2",
     "css-loader": "^2.1.1",
     "file-loader": "^3.0.1",

@@ -4,6 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const BrotliPlugin = require('brotli-webpack-plugin');
 const path = require('path');
 const common = require('./webpack.common');
 
@@ -11,7 +12,8 @@ const prod = {
   mode: 'production',
   plugins: [
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({filename: 'style-[contentHash:8]-bundle.css'})
+    new MiniCssExtractPlugin({filename: 'style-[contentHash:8]-bundle.css'}),
+    new BrotliPlugin()
   ],
   optimization: {
     minimizer: [
